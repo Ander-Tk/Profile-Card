@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+//Typography
+$Kumbh: 'Kumbh Sans', sans-serif; //Weights: 400, 700
+$ft-size: 18px;
+
+//Colors
+$palette: (
+    //Primary
+    --Darkcyan: hsl(185, 75%, 39%),
+    --Verydarkdesaturatedblue: hsl(229, 23%, 23%),
+    --Darkgrayishblue: hsl(227, 10%, 46%),
+
+    //Neutral
+    --Darkgray: hsl(0, 0%, 59%)
+);
+
+@function color($color-name) {
+	@return map-get($palette, $color-name)
+};
+
+//Breakpoint
+$desktop: 840px;
+
+@mixin desktop-view {
+	@media  (min-width: #{$desktop}){
+		@content;
+	}
+};
+
+//Main.css
+body{
+    background-color: color(--Darkcyan);
+    background-image: url("../images/bg-pattern-top.svg");
+    background-repeat: no-repeat;
+    background-position-x: 10%;
+    background-size: 680px;
+    background-position: top -400px left -400px;
+    
+    @include desktop-view(){
+        background-color: color(--Darkcyan);
+        background-image: url("../images/bg-pattern-top.svg");
+        background-repeat: no-repeat;
+        background-size: 920px;
+        background-position: top -500px left -200px;
+    }
+}
+main{
+    background-image: url("../images/bg-pattern-bottom.svg");
+    background-repeat: no-repeat;
+    background-position-x: 80%;
+    background-size: 680px;
+    background-position: bottom -300px right -350px;
+
+    @include desktop-view(){
+        background-image: url("../images/bg-pattern-bottom.svg");
+        background-repeat: no-repeat;
+        background-size: 920px;
+        background-position: bottom -500px right -200px;
+    }
+}
+
+.card{
+    border-radius: 20px;
+    border: 0;
+}
+
+.card-body>img{
+    transform: translateY(-50%);
+    border: 5px solid white;
+}
+
+.text-numbers{
+    padding-top: 20px;
+    font-family: $Kumbh;
+    font-size: 20px;
+    color: color(--Verydarkdesaturatedblue);
+    font-weight: 900;
+}
+.bdy-text{
+    font-family: $Kumbh;
+    font-size: $ft-size;
+    color: color(--Darkgrayishblue);
+    font-weight: 400;
+}
+.name{
+    font-family: $Kumbh;
+    font-weight: bold;
+    font-size: 22px;
+    color: color(--Verydarkdesaturatedblue);
+    font-weight: 900;
+    span{
+        font-family: $Kumbh;
+        font-size: $ft-size;
+        color: color(--Darkgrayishblue);
+        font-weight: 400;
+    }
+}
