@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "Profile-card",
   "version": "1.0.0",
-  "description": "",
+  "description": "Frontend mentor challenge",
   "scripts": {
     "compile-sass": "sass --watch sass/main.scss css/main.css"
   },
